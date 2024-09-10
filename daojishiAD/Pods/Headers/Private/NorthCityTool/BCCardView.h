@@ -1,0 +1,1 @@
+../../../NorthCityTool/NorthCityTool/Classes/BCCardView.h
