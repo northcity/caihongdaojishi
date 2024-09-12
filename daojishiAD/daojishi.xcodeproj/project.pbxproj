@@ -2517,7 +2517,7 @@
 				CODE_SIGN_ENTITLEMENTS = daojishi/daojishi.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: xi chen (UTM49S4XG3)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F7C352F4MW;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F7C352F4MW;
 				ENABLE_BITCODE = NO;
@@ -2550,7 +2550,7 @@
 				CODE_SIGN_ENTITLEMENTS = daojishi/daojishiRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: xi chen (F7C352F4MW)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F7C352F4MW;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

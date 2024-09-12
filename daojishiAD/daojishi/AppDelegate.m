@@ -67,7 +67,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //  1436797708
-    [self createMoBiWuSiAD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self showFristMessage];
     });
@@ -85,14 +84,24 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self createSqlite];
 //    });
+    [self addTrack];
 
     return YES;
 }
 
-- (void)createMoBiWuSiAD{
-    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-    }];
-//    [[APSDK sharedInstance] initWithAppId:@"EqXZMByljeARexpY-YyAA8y"];
+- (void)addTrack{
+    if (@available(iOS 14, *)) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+                NSLog(@"11111111111");
+            }];
+        });
+        
+    } else {
+        NSLog(@"22222222");
+        // Fallback on earlier versions
+    }
+    
 }
 
 
@@ -467,6 +476,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self addTrack];
+
 }
 
 
